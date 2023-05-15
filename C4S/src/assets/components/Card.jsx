@@ -1,4 +1,5 @@
-export function Card({ title, footer, children }) {
+export function Card(props) {
+    const { title, footer, children } = props
     if (title && !footer) {
         return (
             <div className='card'>
