@@ -3,7 +3,6 @@ export function Card(props) {
     const { title, footer, children } = props
     const headerClass = title ? 'card-header' : 'card-header-not-visible'
     const footerClass = footer ? 'card-footer' : 'card-footer-not-visible'
-
     return (
         <div className='card'>
             <div className={headerClass}>{title}</div>
