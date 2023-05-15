@@ -2,10 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { H3Dinamico } from './H3Dinamico.jsx'
-import { ComponenteLista } from './ComponenteLista.jsx'
-
-
+import { H3Dinamico } from './components/H3Dinamico.jsx'
+import { ComponenteLista } from './components/ComponenteLista.jsx'
 
 function App() {
     function mostrarLike() {
@@ -27,7 +25,9 @@ function App() {
                 <li>Romance</li>
                 <li>Drama</li>
             </ComponenteLista>
+
             <H3Dinamico title='Actores' />
+
             <ComponenteLista>
                 <li>Leonardo DiCaprio</li>
                 <li>Brad Pitt</li>
