@@ -1,34 +1,14 @@
 export function Card(props) {
+    //Desestructuro el contenido de props
     const { title, footer, children } = props
-    if (title && !footer) {
-        return (
-            <div className='card'>
-                <div className='card-header'>{title}</div>
-                <div className='card-body'>{children}</div>
-            </div>
-        )
-    } else if (!title && footer) {
-        return (
-            <div className='card'>
-                <div className='card-body'>{children}</div>
-                <div className='card-footer'>{footer}</div>
-            </div>
-        )
-    } else if (title && footer) {
-        {
-            return (
-                <div className='card'>
-                    <div className='card-header'>{title}</div>
-                    <div className='card-body'>{children}</div>
-                    <div className='card-footer'>{footer}</div>
-                </div>
-            )
-        }
-    } else {
-        return (
-            <div className='card'>
-                <div className='card-body'>{children}</div>
-            </div>
-        )
-    }
+    const headerClass = title ? 'card-header' : 'card-header-not-visible'
+    const footerClass = footer ? 'card-footer' : 'card-footer-not-visible'
+
+    return (
+        <div className='card'>
+            <div className={headerClass}>{title}</div>
+            <div className='card-body'>{children}</div>
+            <div className={footerClass}>{footer}</div>
+        </div>
+    )
 }

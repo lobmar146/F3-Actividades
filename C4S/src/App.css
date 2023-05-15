@@ -43,14 +43,25 @@
 }
 
 .card-header {
+    display: block;
     border: thick double white;
     padding: 10px 40px;
 }
 .card-footer {
+    display: block;
     border: thick double white;
     padding: 10px 40px;
 }
 .card-body {
     border: thick double white;
     padding: 30px 1px;
+}
+
+/* Estilos de la card  cuando no son visibles*/
+.card-header-not-visible {
+    display: none;
+}
+
+.card-footer-not-visible {
+    display: none;
 }
