@@ -58,6 +58,10 @@
   padding: 2px 30px;
 }
 
-.hidde{
+.card{
+  margin-bottom: 15px;
+}
+
+.hidden{
   display: none;
 }
