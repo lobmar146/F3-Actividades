@@ -1,27 +1,26 @@
 export function Card(props) {
     console.log(props)
+    const renderTitle=props.title ? 
+        (<div className="card-title">
+            <p>{props.title}</p>
+        </div>) 
+        : 
+        undefined
+
+    const renderFooter=props.footer ?
+        (<div className="card-footer">
+            <p>{props.footer}</p>
+        </div>)
+        :
+        undefined
+    
     return (
         <div className='card'>
-            {props.title ? 
-                (<div className="card-title">
-                    <p>{props.title}</p>
-                </div>) 
-                : 
-                undefined
-            }
-
+            {renderTitle}
             <div className="card-body">
                 <p>{props.children}</p>
             </div>
-            
-            {props.footer ? 
-                (<div className="card-footer">
-                    <p>{props.footer}</p>
-                </div>) 
-                : 
-                undefined
-            }
-
+            {renderFooter}
         </div>
     )
 }
