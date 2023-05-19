@@ -1,0 +1,25 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.read-the-docs {
+    color: #888;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 8px 0px 20px 0px rgb(255, 255, 255);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
