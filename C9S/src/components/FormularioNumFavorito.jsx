@@ -1,11 +1,11 @@
 import { useState } from 'react'
+let autoId = 0
+
 export function FormularioNumFavorito() {
   const [numero, setNumero] = useState(0)
   const [usuario, setUsuario] = useState('')
   const [mensajeError, setMensajeError] = useState('')
   const [valores, setValores] = useState([])
-
-  let autoId = 0
 
   const validateNumber = numero => {
     return numero > 0 ? true : false
@@ -17,20 +17,15 @@ export function FormularioNumFavorito() {
 
   const handeSubbmit = e => {
     e.preventDefault()
-
-    if (!validateNumber(numero)) {
-      setMensajeError('ERROR, el numero ingresado debe ser mayor a 0')
-      console.log(mensajeError)
-    }
     if (!validateUser(usuario)) {
       setMensajeError('ERROR, el nombre de usuario no puede estar vacio')
-      console.log(mensajeError)
+    } else if (!validateNumber(numero)) {
+      setMensajeError('ERROR, el numero ingresado debe ser mayor a 0')
     } else {
       setValores([...valores, { usuario, numero, id: autoId++ }])
       setUsuario('')
       setNumero(0)
       setMensajeError('')
-      console.log(valores)
     }
   }
 
