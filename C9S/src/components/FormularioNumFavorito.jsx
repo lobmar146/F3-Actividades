@@ -1,17 +1,53 @@
 import { useState } from 'react'
 export function FormularioNumFavorito() {
   const [numero, setNumero] = useState(0)
+  const [usuario, setUsuario] = useState('')
+  const [mensajeError, setMensajeError] = useState('')
+  const [valores, setValores] = useState([])
+
+  let autoId = 0
+
+  const validateNumber = numero => {
+    return numero > 0 ? true : false
+  }
+
+  const validateUser = usuario => {
+    return usuario.length > 0 ? true : false
+  }
 
   const handeSubbmit = e => {
     e.preventDefault()
-    console.log(`Tu numero favorito es ${numero}`)
+
+    if (!validateNumber(numero)) {
+      setMensajeError('ERROR, el numero ingresado debe ser mayor a 0')
+      console.log(mensajeError)
+    }
+    if (!validateUser(usuario)) {
+      setMensajeError('ERROR, el nombre de usuario no puede estar vacio')
+      console.log(mensajeError)
+    } else {
+      setValores([...valores, { usuario, numero, id: autoId++ }])
+      setUsuario('')
+      setNumero(0)
+      setMensajeError('')
+      console.log(valores)
+    }
   }
 
   return (
     <>
       <section>
+        <h1>Ingresa tu numero favorito 🔢</h1>
         <form onSubmit={handeSubbmit}>
-          <label htmlFor='numero'>Numero favorito</label>
+          <label htmlFor='usuario'>Ingrese su nombre de usuario: </label>
+          <input
+            type='text'
+            id='usuario'
+            value={usuario}
+            onChange={e => setUsuario(e.target.value)}
+          />
+
+          <label htmlFor='numero'>Ingrese su numero favorito: </label>
           <input
             type='number'
             id='numero'
@@ -20,6 +56,20 @@ export function FormularioNumFavorito() {
           />
           <button type='submit'>Enviar</button>
         </form>
+        {mensajeError ? <p className='error'>{mensajeError}</p> : undefined}
+        {valores.length === 0 ? undefined : (
+          <>
+            <h3>Valores ingresados:</h3>
+            <ul className='card'>
+              {valores.map(valor => (
+                <li className='card' key={valor.id}>
+                  <p>Nombre: {valor.usuario}</p>
+                  <p>Número favorito: {valor.numero}</p>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </section>
     </>
   )
