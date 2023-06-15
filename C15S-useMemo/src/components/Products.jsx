@@ -4,8 +4,6 @@ import { useMemo, useState } from 'react'
 export default function Products() {
   const [products, setProducts] = useState(productos)
 
-  console.log('recalculating expensiveProducts...')
-
   const agregarProducto = () => {
     setProducts([
       ...products,
@@ -18,7 +16,7 @@ export default function Products() {
     ])
   }
   const productosMayores50 = useMemo(() => {
-    // console.log('recalculating ...')
+    console.log('Calculando productos mayores a 50 ...')
     return products.filter(product => product.precio > 50)
   }, [])
 

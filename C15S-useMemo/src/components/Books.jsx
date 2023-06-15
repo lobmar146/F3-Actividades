@@ -3,7 +3,9 @@ import { useMemo, useState } from 'react'
 
 export default function Books() {
   const [planeta, setPlaneta] = useState('Roshar')
+
   const librosSegunPlaneta = useMemo(() => {
+    console.log('Calculando libros segun planeta ...')
     return books.filter(book => book.planeta === planeta)
   }, [planeta])
 

@@ -17,6 +17,7 @@ export default function Inputs() {
 
   const sumarInputs = useMemo(() => {
     console.log('sumarInputs')
+
     return parseInt(input1) + parseInt(input2)
   }, [input1, input2])
 
