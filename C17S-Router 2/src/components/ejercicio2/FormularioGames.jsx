@@ -1,18 +1,16 @@
 import { useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
-export default function FormularioGames() {
-  const [select, setSelect] = useState('')
-  const [input, setInput] = useState('')
-  const [, setSearchParams] = useSearchParams()
+export default function FormularioGames(props) {
+  const setearFiltros = props.setearFiltros
+  const [genero, setGenero] = useState('Roguelike')
 
   function handleSubmit(e) {
     e.preventDefault()
-    setSearchParams({ genero: select, tiempoJugado: input })
+    setearFiltros({ genero: genero })
   }
 
   return (
     <form>
-      <select onChange={e => setSelect(e.target.value)} value={select}>
+      <select onChange={e => setGenero(e.target.value)} value={genero}>
         <option value='Roguelike'>Roguelike</option>
         <option value='Platformer'>Platformer</option>
         <option value='Action'>Action</option>
@@ -23,12 +21,7 @@ export default function FormularioGames() {
         <option value='Board'>Board</option>
         <option value='Precision'>Precision</option>
       </select>
-      <input
-        type='text'
-        placeholder='min played time'
-        value={input}
-        onChange={e => setInput(e.target.value)}
-      />
+
       <button type='submit' onClick={handleSubmit}>
         Filter
       </button>
