@@ -1,29 +1,29 @@
-import { useState } from 'react'
-import { Routes, Route, Link, Outlet } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
-import Ejercicio1 from './routes/Ejercicio1'
+import Posteos from './routes/Posteos'
 import Ejercicio2 from './routes/Ejercicio2'
-import PostEspecifico from './components/PostEspecifico'
-import ListarPosts from './components/ListarPosts'
+import PostEspecifico from './components/ejercicio1/PostEspecifico'
+import ListarPosts from './components/ejercicio1/ListarPosts'
+import FormularioGames from './components/ejercicio2/FormularioGames'
 
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
-        {/* Pagina index, igual que ejercicio 1 */}
-        <Route path='/' element={<Ejercicio1 />}>
-          <Route index element={<ListarPosts />} />
-          <Route path=':id' element={<PostEspecifico />} />
-        </Route>
+        {/* El index redirecciona a ejercicio 1*/}
+        <Route path='/' element={<Navigate to='/posteos' />} />
+
         {/* Pagina Ejercicio 1 */}
-        <Route path='/ejercicio1' element={<Ejercicio1 />}>
+        <Route path='/posteos' element={<Posteos />}>
           <Route index element={<ListarPosts />} />
           <Route path=':id' element={<PostEspecifico />} />
         </Route>
         {/* Ejercicio 2 */}
-        <Route path='/ejercicio2' element={<Ejercicio2 />} />
+        <Route path='/ejercicio2' element={<Ejercicio2 />}>
+          <Route index element={<FormularioGames />} />
+        </Route>
       </Routes>
     </>
   )
