@@ -1,8 +1,10 @@
+import { Outlet } from 'react-router-dom'
+
 export default function Ejercicio1() {
   return (
     <section>
-      <h1>Ejercicio 1</h1>
-      <p>Este es el ejercicio 1</p>
+      <h1>Ejercicio 1 </h1>
+      <Outlet />
     </section>
   )
 }

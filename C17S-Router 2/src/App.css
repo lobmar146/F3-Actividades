@@ -1,5 +1,4 @@
 #root {
-  margin: 0 auto;
   text-align: center;
 }
 
@@ -43,4 +42,25 @@ a {
 
 nav a:hover {
   color: rgb(0, 208, 255);
+}
+
+ol {
+  list-style-position: inside;
+  background-color: rgba(0, 0, 0, 0.267);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+li {
+  margin-bottom: 20px;
+  color: rgb(0, 200, 255);
+  font-weight: bold;
+}
+
+article {
+  background-color: rgba(0, 0, 0, 0.267);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
 }
