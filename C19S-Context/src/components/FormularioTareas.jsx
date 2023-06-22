@@ -10,19 +10,21 @@ export default function FormularioTareas() {
     setTarea(e.target.value)
   }
 
-  const validador = () => {
+  const esInputCorrecto = () => {
     if (tarea === '') {
       setError('No puede estar vacio  UwU')
-    } else {
-      setError('')
-      agregarTarea(tarea)
-      setTarea('')
+      return false
     }
+    setError('')
+    return true
   }
 
   const handleSubmmit = e => {
     e.preventDefault()
-    validador()
+    if (esInputCorrecto()) {
+      agregarTarea(tarea)
+      setTarea('')
+    }
   }
   return (
     <>
