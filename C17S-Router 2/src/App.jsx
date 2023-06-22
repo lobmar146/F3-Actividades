@@ -5,7 +5,6 @@ import Posteos from './routes/Posteos'
 import Juegos from './routes/Juegos'
 import PostEspecifico from './components/ejercicio1/PostEspecifico'
 import ListarPosts from './components/ejercicio1/ListarPosts'
-import FormularioGames from './components/ejercicio2/FormularioGames'
 import JuegoEspecifico from './components/ejercicio2/JuegoEspecifico'
 
 function App() {

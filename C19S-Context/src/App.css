@@ -1,0 +1,69 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+body {
+  width: 1400px;
+}
+
+form {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #012f24aa;
+  padding: 2em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em #00000055;
+  gap: 20px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #012f24aa;
+  padding: 2em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em #00000055;
+}
+
+.listado-tareas {
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background-color: #012f241e;
+  padding: 2em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 1em #00000055;
+  gap: 20px;
+}
+.seccion-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error {
+  background-color: rgba(255, 0, 0, 0.29);
+  padding: 10px;
+  border-radius: 20px;
+}
